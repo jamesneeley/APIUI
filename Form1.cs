@@ -13,7 +13,7 @@ namespace APIUI
 {
 	public partial class Form1 : Form
 	{
-		private String connectionString = "Data Source=Ecin1devo1sql1.ecbrands.com;Initial Catalog=hspp1devo3;Persist Security Info=True;User ID=hspp1devo1;Password=9oCMt6uObSIVvMvcJGPz";
+		private String connectionString = ConfigurationManager.ConnectionStrings["APIUI.Properties.Settings.hspp1devo3ConnectionStringDev"].ConnectionString;
 		private SqlConnection sqlConnection = null;
 		private SqlDataAdapter sqlDataAdapter = null;
 		private SqlCommandBuilder sqlCommandBuilder = null;
