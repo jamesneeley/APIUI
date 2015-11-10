@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hspp1devo3DataSet" targetNamespace="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns:mstns="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hspp1devo3ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hspp1devo3ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.APIUI.Properties.Settings.GlobalReference.Default.hspp1devo3ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WebServiceAccessTableAdapter" GeneratorDataComponentClassName="WebServiceAccessTableAdapter" Name="WebServiceAccess" UserDataComponentName="WebServiceAccessTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hspp1devo3ConnectionString (Settings)" DbObjectName="hspp1devo3.dbo.WebServiceAccess" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT UserId, Note, IPAddress FROM dbo.WebServiceAccess WHERE UserId=UserId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserId" DataSetColumn="UserId" />
+              <Mapping SourceColumn="IPAddress" DataSetColumn="IPAddress" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="hspp1devo3DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hspp1devo3DataSet" msprop:Generator_UserDSName="hspp1devo3DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="WebServiceAccess" msprop:Generator_TableClassName="WebServiceAccessDataTable" msprop:Generator_TableVarName="tableWebServiceAccess" msprop:Generator_RowChangedName="WebServiceAccessRowChanged" msprop:Generator_TablePropName="WebServiceAccess" msprop:Generator_RowDeletingName="WebServiceAccessRowDeleting" msprop:Generator_RowChangingName="WebServiceAccessRowChanging" msprop:Generator_RowEvHandlerName="WebServiceAccessRowChangeEventHandler" msprop:Generator_RowDeletedName="WebServiceAccessRowDeleted" msprop:Generator_RowClassName="WebServiceAccessRow" msprop:Generator_UserTableName="WebServiceAccess" msprop:Generator_RowEvArgName="WebServiceAccessRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IPAddress" msprop:Generator_ColumnVarNameInTable="columnIPAddress" msprop:Generator_ColumnPropNameInRow="IPAddress" msprop:Generator_ColumnPropNameInTable="IPAddressColumn" msprop:Generator_UserColumnName="IPAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Note" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
