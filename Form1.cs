@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Configuration;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -14,12 +11,6 @@ namespace APIUI
 	public partial class Form1 : Form
 	{
 		private String connectionString = ConfigurationManager.ConnectionStrings["APIUI.Properties.Settings.hspp1devo3ConnectionStringDev"].ConnectionString;
-		private SqlConnection sqlConnection = null;
-		private SqlDataAdapter sqlDataAdapter = null;
-		private SqlCommandBuilder sqlCommandBuilder = null;
-		private DataTable dataTable = null;
-		private BindingSource bindingSource = null;
-		private String selectQueryString = null;
 
 		public Form1()
 		{
@@ -28,17 +19,16 @@ namespace APIUI
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			// TODO: This line of code loads data into the 'hspp1devo3DataSet.WebServiceAccess' table. You can move, or remove it, as needed.
-			this.webServiceAccessTableAdapter.Fill(this.hspp1devo3DataSet.WebServiceAccess);
-			label4.Text = "";
+			webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
+			label4.Text = string.Empty;
 		}
 
 		private void buttonLoad_Click(object sender, EventArgs e)
 		{
-			Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+			var selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
 			if (selectedRowCount > 0)
 			{
-				for (int i = 0; i < selectedRowCount; i++)
+				for (var i = 0; i < selectedRowCount; i++)
 				{
 					resetUser();
 					label4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -55,8 +45,8 @@ namespace APIUI
 
 		private void loadUser()
 		{
-			SqlConnection conn = new SqlConnection(connectionString);
-			SqlCommand comm = new SqlCommand("SELECT UserId, MethodName, VisibleProperties FROM WebServiceAccess WHERE UserId = '" + label4.Text + "'", conn);
+			var conn = new SqlConnection(connectionString);
+			var comm = new SqlCommand("SELECT UserId, MethodName, VisibleProperties FROM WebServiceAccess WHERE UserId = '" + label4.Text + "'", conn);
 			SqlDataReader reader;
 
 			if (!string.IsNullOrEmpty(textBoxUserId.Text))
@@ -72,66 +62,107 @@ namespace APIUI
 					{
 						while (reader.Read())
 						{
-							//Populate Top Downs
 							if (reader.GetString(1).ToString().Equals("Item"))
 							{
 								checkBoxItem.Checked = true;
 							}
-							else if (reader.GetString(1).Equals("PostOrder"))
+							else
 							{
-								checkBoxPostOrder.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetBomComponents"))
-							{
-								checkBoxGetBomComponents.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetBomList"))
-							{
-								checkBoxGetBomList.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetCommonlyReplacedItems"))
-							{
-								checkBoxGetCommonlyReplacedItems.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetDailySales"))
-							{
-								checkBoxGetDailySales.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetImageUrls"))
-							{
-								checkBoxGetImageUrls.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetInventoryListChanges"))
-							{
-								checkBoxGetInventoryListChanges.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetMasterInventoryList"))
-							{
-								checkBoxGetMasterInventoryList.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetMultipleItemDetail"))
-							{
-								checkBoxGetMultipleItemDetail.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetRealtimeItemStatus"))
-							{
-								checkBoxGetRealtimeItemStatus.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetRecommendedItems"))
-							{
-								checkBoxGetRecommendedItems.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetSalesOrder"))
-							{
-								checkBoxGetSalesOrder.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetSpecialPricedItems"))
-							{
-								checkBoxGetSpecialPricedItems.Checked = true;
-							}
-							else if (reader.GetString(1).Equals("GetTrackingNumber"))
-							{
-								checkBoxGetTrackingNumber.Checked = true;
+								if (reader.GetString(1).Equals("PostOrder"))
+								{
+									checkBoxPostOrder.Checked = true;
+								}
+								else
+								{
+									if (reader.GetString(1).Equals("GetBomComponents"))
+									{
+										checkBoxGetBomComponents.Checked = true;
+									}
+									else
+									{
+										if (reader.GetString(1).Equals("GetBomList"))
+										{
+											checkBoxGetBomList.Checked = true;
+										}
+										else
+										{
+											if (reader.GetString(1).Equals("GetCommonlyReplacedItems"))
+											{
+												checkBoxGetCommonlyReplacedItems.Checked = true;
+											}
+											else
+											{
+												if (reader.GetString(1).Equals("GetDailySales"))
+												{
+													checkBoxGetDailySales.Checked = true;
+												}
+												else
+												{
+													if (reader.GetString(1).Equals("GetImageUrls"))
+													{
+														checkBoxGetImageUrls.Checked = true;
+													}
+													else
+													{
+														if (reader.GetString(1).Equals("GetInventoryListChanges"))
+														{
+															checkBoxGetInventoryListChanges.Checked = true;
+														}
+														else
+														{
+															if (reader.GetString(1).Equals("GetMasterInventoryList"))
+															{
+																checkBoxGetMasterInventoryList.Checked = true;
+															}
+															else
+															{
+																if (reader.GetString(1).Equals("GetMultipleItemDetail"))
+																{
+																	checkBoxGetMultipleItemDetail.Checked = true;
+																}
+																else
+																{
+																	if (reader.GetString(1).Equals("GetRealtimeItemStatus"))
+																	{
+																		checkBoxGetRealtimeItemStatus.Checked = true;
+																	}
+																	else
+																	{
+																		if (reader.GetString(1).Equals("GetRecommendedItems"))
+																		{
+																			checkBoxGetRecommendedItems.Checked = true;
+																		}
+																		else
+																		{
+																			if (reader.GetString(1).Equals("GetSalesOrder"))
+																			{
+																				checkBoxGetSalesOrder.Checked = true;
+																			}
+																			else
+																			{
+																				if (reader.GetString(1).Equals("GetSpecialPricedItems"))
+																				{
+																					checkBoxGetSpecialPricedItems.Checked = true;
+																				}
+																				else
+																				{
+																					if (reader.GetString(1).Equals("GetTrackingNumber"))
+																					{
+																						checkBoxGetTrackingNumber.Checked = true;
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -149,7 +180,6 @@ namespace APIUI
 					comm.Dispose();
 					comm = null;
 					conn.Dispose();
-					//it close and dispose 
 					conn.Close();
 				}
 			}
@@ -172,38 +202,37 @@ namespace APIUI
 			checkBoxGetSalesOrder.Checked = false;
 			checkBoxGetSpecialPricedItems.Checked = false;
 			checkBoxGetTrackingNumber.Checked = false;
-			textBoxUserId.Text = "";
-			textBoxIPAddress.Text = "";
-			textBoxNote.Text = "";
-			label4.Text = "";			
+			textBoxUserId.Text = string.Empty;
+			textBoxIPAddress.Text = string.Empty;
+			textBoxNote.Text = string.Empty;
+			label4.Text = string.Empty;
 		}
 
 		private void buttonDelete_Click(object sender, EventArgs e)
 		{
 			DialogResult myResult;
-      myResult = MessageBox.Show("Are you really delete this user?", "Delete Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop);
+			myResult = MessageBox.Show("Are you really delete this user?", "Delete Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop);
 			if (myResult == DialogResult.Yes)
 			{
-
-				Int32 selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+				var selectedRowCount = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
 				if (selectedRowCount > 0)
 				{
-					for (int i = 0; i < selectedRowCount; i++)
+					for (var i = 0; i < selectedRowCount; i++)
 					{
 						label4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 						string sql = null;
 						sql = "DELETE FROM WebServiceAccess WHERE UserId='" + label4.Text + "'";
 
-						SqlConnection conn = new SqlConnection(connectionString);
+						var conn = new SqlConnection(connectionString);
 						try
 						{
 							conn.Open();
-							SqlCommand comm = new SqlCommand(sql, conn);
+							var comm = new SqlCommand(sql, conn);
 							comm.ExecuteNonQuery();
 							comm.Dispose();
 							conn.Close();
 							MessageBox.Show(" User Account Deleted");
-							this.webServiceAccessTableAdapter.Fill(this.hspp1devo3DataSet.WebServiceAccess);
+							webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
 							resetUser();
 						}
 						catch (Exception ex)
@@ -218,15 +247,14 @@ namespace APIUI
 		private void buttonCreate_Click(object sender, EventArgs e)
 		{
 			string sql = null;
-			
-			SqlConnection conn = new SqlConnection(connectionString);
+			var conn = new SqlConnection(connectionString);
 			try
 			{
 				if (checkBoxItem.CheckState == CheckState.Checked)
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'Item', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -235,7 +263,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'PostOrder', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -244,7 +272,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetBomComponents', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -253,7 +281,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetBomList', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -262,7 +290,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetCommonlyReplacedItems', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -271,7 +299,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetDailySales', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -280,7 +308,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetImageUrls', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -289,7 +317,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetInventoryListChanges', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -298,7 +326,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetMasterInventoryList', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -307,7 +335,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetMultipleItemDetail', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -316,7 +344,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetRealtimeItemStatus', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -325,7 +353,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetRecommendedItems', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -334,7 +362,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetSalesOrder', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -343,7 +371,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetSpecialPricedItems', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -352,7 +380,7 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetTrackingNumber', 'all', '" + textBoxNote.Text + "')";
-					SqlCommand comm = new SqlCommand(sql, conn);
+					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
 					conn.Close();
@@ -360,7 +388,7 @@ namespace APIUI
 
 				MessageBox.Show(" User Account Created");
 				resetUser();
-				this.webServiceAccessTableAdapter.Fill(this.hspp1devo3DataSet.WebServiceAccess);
+				webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
 			}
 			catch (Exception ex)
 			{
@@ -371,11 +399,10 @@ namespace APIUI
 		private void buttonReset_Click(object sender, EventArgs e)
 		{
 			resetUser();
-			this.webServiceAccessTableAdapter.Fill(this.hspp1devo3DataSet.WebServiceAccess);
+			webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
 			textBoxNote.Enabled = true;
 			textBoxIPAddress.Enabled = true;
 			textBoxUserId.Enabled = true;
 		}
-
 	}
 }
