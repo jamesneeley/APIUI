@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="hspp1devo3DataSet" targetNamespace="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns:mstns="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns="http://tempuri.org/hspp1devo3DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hspp1devo3DataSetDev" targetNamespace="http://tempuri.org/hspp1devo3DataSetDev.xsd" xmlns:mstns="http://tempuri.org/hspp1devo3DataSetDev.xsd" xmlns="http://tempuri.org/hspp1devo3DataSetDev.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hspp1devo3ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hspp1devo3ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.APIUI.Properties.Settings.GlobalReference.Default.hspp1devo3ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hspp1devo3ConnectionStringDev" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hspp1devo3ConnectionStringDev (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.APIUI.Properties.Settings.GlobalReference.Default.hspp1devo3ConnectionStringDev" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="WebServiceAccessTableAdapter" GeneratorDataComponentClassName="WebServiceAccessTableAdapter" Name="WebServiceAccess" UserDataComponentName="WebServiceAccessTableAdapter">
@@ -30,10 +30,10 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="hspp1devo3DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hspp1devo3DataSet" msprop:Generator_UserDSName="hspp1devo3DataSet">
+  <xs:element name="hspp1devo3DataSetDev" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hspp1devo3DataSetDev" msprop:Generator_UserDSName="hspp1devo3DataSetDev">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="WebServiceAccess" msprop:Generator_TableClassName="WebServiceAccessDataTable" msprop:Generator_TableVarName="tableWebServiceAccess" msprop:Generator_RowChangedName="WebServiceAccessRowChanged" msprop:Generator_TablePropName="WebServiceAccess" msprop:Generator_RowDeletingName="WebServiceAccessRowDeleting" msprop:Generator_RowChangingName="WebServiceAccessRowChanging" msprop:Generator_RowEvHandlerName="WebServiceAccessRowChangeEventHandler" msprop:Generator_RowDeletedName="WebServiceAccessRowDeleted" msprop:Generator_RowClassName="WebServiceAccessRow" msprop:Generator_UserTableName="WebServiceAccess" msprop:Generator_RowEvArgName="WebServiceAccessRowChangeEvent">
+        <xs:element name="WebServiceAccess" msprop:Generator_TableClassName="WebServiceAccessDataTable" msprop:Generator_TableVarName="tableWebServiceAccess" msprop:Generator_TablePropName="WebServiceAccess" msprop:Generator_RowDeletingName="WebServiceAccessRowDeleting" msprop:Generator_RowChangingName="WebServiceAccessRowChanging" msprop:Generator_RowEvHandlerName="WebServiceAccessRowChangeEventHandler" msprop:Generator_RowDeletedName="WebServiceAccessRowDeleted" msprop:Generator_UserTableName="WebServiceAccess" msprop:Generator_RowChangedName="WebServiceAccessRowChanged" msprop:Generator_RowEvArgName="WebServiceAccessRowChangeEvent" msprop:Generator_RowClassName="WebServiceAccessRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" minOccurs="0">

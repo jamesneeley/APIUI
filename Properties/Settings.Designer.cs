@@ -12,7 +12,7 @@ namespace APIUI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -28,9 +28,20 @@ namespace APIUI.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Ecin1devo1sql1.ecbrands.com;Initial Catalog=hspp1devo3;Persist Securi" +
             "ty Info=True;User ID=hspp1devo1;Password=9oCMt6uObSIVvMvcJGPz")]
-        public string hspp1devo3ConnectionString {
+        public string hspp1devo3ConnectionStringDev {
             get {
-                return ((string)(this["hspp1devo3ConnectionString"]));
+                return ((string)(this["hspp1devo3ConnectionStringDev"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=hspp1prod1sql2.ecbrands.com;Initial Catalog=hspp1prod2;Persist Securi" +
+            "ty Info=True;User ID=hspp1prod;Password=dBTO7GgUdHSGFG9p")]
+        public string hspp1devo3ConnectionStringLive {
+            get {
+                return ((string)(this["hspp1devo3ConnectionStringLive"]));
             }
         }
     }

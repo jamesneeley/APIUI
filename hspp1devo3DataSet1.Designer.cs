@@ -20,9 +20,9 @@ namespace APIUI {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("hspp1devo3DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("hspp1devo3DataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class hspp1devo3DataSet : global::System.Data.DataSet {
+    public partial class hspp1devo3DataSet1 : global::System.Data.DataSet {
         
         private WebServiceAccessDataTable tableWebServiceAccess;
         
@@ -30,7 +30,7 @@ namespace APIUI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public hspp1devo3DataSet() {
+        public hspp1devo3DataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace APIUI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected hspp1devo3DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected hspp1devo3DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace APIUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            hspp1devo3DataSet cln = ((hspp1devo3DataSet)(base.Clone()));
+            hspp1devo3DataSet1 cln = ((hspp1devo3DataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace APIUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "hspp1devo3DataSet";
+            this.DataSetName = "hspp1devo3DataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/hspp1devo3DataSet.xsd";
+            this.Namespace = "http://tempuri.org/hspp1devo3DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableWebServiceAccess = new WebServiceAccessDataTable();
@@ -225,7 +225,7 @@ namespace APIUI {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            hspp1devo3DataSet ds = new hspp1devo3DataSet();
+            hspp1devo3DataSet1 ds = new hspp1devo3DataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -491,7 +491,7 @@ namespace APIUI {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                hspp1devo3DataSet ds = new hspp1devo3DataSet();
+                hspp1devo3DataSet1 ds = new hspp1devo3DataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -684,7 +684,7 @@ namespace APIUI {
         }
     }
 }
-namespace APIUI.hspp1devo3DataSetTableAdapters {
+namespace APIUI.hspp1devo3DataSet1TableAdapters {
     
     
     /// <summary>
@@ -818,7 +818,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::APIUI.Properties.Settings.Default.hspp1devo3ConnectionStringLive;
+            this._connection.ConnectionString = global::APIUI.Properties.Settings.Default.hspp1devo3ConnectionStringDev;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -827,7 +827,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DISTINCT UserId, Note, IPAddress FROM dbo.WebServiceAccess WHERE UserId=Us" +
+            this._commandCollection[0].CommandText = "SELECT DISTINCT UserId, IPAddress, Note FROM dbo.WebServiceAccess WHERE UserId=Us" +
                 "erId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -836,7 +836,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(hspp1devo3DataSet.WebServiceAccessDataTable dataTable) {
+        public virtual int Fill(hspp1devo3DataSet1.WebServiceAccessDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -849,9 +849,9 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual hspp1devo3DataSet.WebServiceAccessDataTable GetData() {
+        public virtual hspp1devo3DataSet1.WebServiceAccessDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            hspp1devo3DataSet.WebServiceAccessDataTable dataTable = new hspp1devo3DataSet.WebServiceAccessDataTable();
+            hspp1devo3DataSet1.WebServiceAccessDataTable dataTable = new hspp1devo3DataSet1.WebServiceAccessDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -925,7 +925,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(hspp1devo3DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(hspp1devo3DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -935,7 +935,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(hspp1devo3DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(hspp1devo3DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -945,7 +945,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(hspp1devo3DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(hspp1devo3DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -979,7 +979,7 @@ namespace APIUI.hspp1devo3DataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(hspp1devo3DataSet dataSet) {
+        public virtual int UpdateAll(hspp1devo3DataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

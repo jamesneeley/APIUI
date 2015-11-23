@@ -14,3 +14,24 @@ bin/Debug/APIUI.vshost.exe
 bin/Debug/APIUI.vshost.exe.config
 bin/Debug/APIUI.vshost.exe.manifest
 app.config
+bin/Debug/app.publish/APIUI.application
+bin/Debug/app.publish/Application Files/APIUI_2_0_0_8/APIUI.exe.config.deploy
+bin/Debug/app.publish/Application Files/APIUI_2_0_0_8/APIUI.exe.deploy
+bin/Debug/app.publish/Application Files/APIUI_2_0_0_8/APIUI.exe.manifest
+bin/Debug/app.publish/index.htm
+bin/Debug/app.publish/setup.exe
+obj/x86/Debug/APIUI.csprojResolveAssemblyReference.cache
+obj/x86/Debug/TempPE/hspp1devo3DataSetDev.Designer.cs.dll
+APIUI.csproj.user
+APIUI_TemporaryKey.pfx
+app.config
+hspp1devo3DataSet.xsd
+obj/x86/Debug/APIUI.Form2.resources
+obj/x86/Debug/APIUI.frmMain.resources
+Properties/app.manifest
+Properties/Settings.Designer.cs
+Properties/Settings.settings
+app.config
+hspp1devo3DataSet.xsd
+Properties/Settings.Designer.cs
+Properties/Settings.settings

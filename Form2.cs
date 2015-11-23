@@ -8,14 +8,14 @@ using System.Data.SqlClient;
 
 namespace APIUI
 {
-	public partial class Form1 : Form
+	public partial class Form2 : Form
 	{
     private String _connectionString = null;
-    //private String _connectionString = ConfigurationManager.ConnectionStrings["APIUI.Properties.Settings.hspp1devo3ConnectionString"].ConnectionString;
+    //private String _connectionString = ConfigurationManager.ConnectionStrings["APIUI.Properties.Settings.hspp1devo3ConnectionStringDev"].ConnectionString;
 
     public String connectionString { get { return _connectionString; } }
 
-    public Form1(String InputString)
+    public Form2(String InputString)
     {
       _connectionString = InputString;
       InitializeComponent();
@@ -23,9 +23,12 @@ namespace APIUI
 
 		
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void Form2_Load(object sender, EventArgs e)
 		{
-			webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
+      // TODO: This line of code loads data into the 'hspp1devo3DataSet1.WebServiceAccess' table. You can move, or remove it, as needed.
+      this.webServiceAccessTableAdapter.Fill(this.hspp1devo3DataSet1.WebServiceAccess);
+      // TODO: This line of code loads data into the 'hspp1devo3DataSetDev.WebServiceAccess' table. You can move, or remove it, as needed.
+      //webServiceAccessTableAdapter1.Fill(hspp1devo3DataSetDev.WebServiceAccess);
 			label4.Text = string.Empty;
 		}
 
@@ -238,7 +241,7 @@ namespace APIUI
 							comm.Dispose();
 							conn.Close();
 							MessageBox.Show(" User Account Deleted");
-							webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
+							webServiceAccessTableAdapter.Fill(hspp1devo3DataSet1.WebServiceAccess);
 							resetUser();
 						}
 						catch (Exception ex)
@@ -394,7 +397,7 @@ namespace APIUI
 
 				MessageBox.Show(" User Account Created");
 				resetUser();
-				webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
+				webServiceAccessTableAdapter.Fill(hspp1devo3DataSet1.WebServiceAccess);
 			}
 			catch (Exception ex)
 			{
@@ -405,7 +408,7 @@ namespace APIUI
 		private void buttonReset_Click(object sender, EventArgs e)
 		{
 			resetUser();
-			webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
+			webServiceAccessTableAdapter.Fill(hspp1devo3DataSet1.WebServiceAccess);
 			textBoxNote.Enabled = true;
 			textBoxIPAddress.Enabled = true;
 			textBoxUserId.Enabled = true;

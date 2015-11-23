@@ -1,6 +1,6 @@
 ﻿namespace APIUI
 {
-	partial class Form1
+	partial class Form2
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -42,11 +42,6 @@
       this.textBoxUserId = new System.Windows.Forms.TextBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.dataGridView1 = new System.Windows.Forms.DataGridView();
-      this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.iPAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-      this.webServiceAccessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.hspp1devo3DataSet = new APIUI.hspp1devo3DataSet();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.checkBoxGetTrackingNumber = new System.Windows.Forms.CheckBox();
       this.checkBoxGetSpecialPricedItems = new System.Windows.Forms.CheckBox();
@@ -66,17 +61,22 @@
       this.label4 = new System.Windows.Forms.Label();
       this.buttonLoad = new System.Windows.Forms.Button();
       this.buttonCreate = new System.Windows.Forms.Button();
-      this.webServiceAccessTableAdapter = new APIUI.hspp1devo3DataSetTableAdapters.WebServiceAccessTableAdapter();
       this.buttonDelete = new System.Windows.Forms.Button();
       this.label5 = new System.Windows.Forms.Label();
       this.buttonReset = new System.Windows.Forms.Button();
+      this.hspp1devo3DataSet1 = new APIUI.hspp1devo3DataSet1();
+      this.webServiceAccessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.webServiceAccessTableAdapter = new APIUI.hspp1devo3DataSet1TableAdapters.WebServiceAccessTableAdapter();
+      this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.iPAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.groupBox1.SuspendLayout();
       this.groupBox4.SuspendLayout();
       this.groupBox3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet)).BeginInit();
       this.groupBox2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -204,39 +204,6 @@
       this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
       this.dataGridView1.Size = new System.Drawing.Size(308, 218);
       this.dataGridView1.TabIndex = 0;
-      // 
-      // userIdDataGridViewTextBoxColumn
-      // 
-      this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-      this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-      this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-      this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
-      this.userIdDataGridViewTextBoxColumn.Width = 60;
-      // 
-      // noteDataGridViewTextBoxColumn
-      // 
-      this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
-      this.noteDataGridViewTextBoxColumn.HeaderText = "Name";
-      this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
-      this.noteDataGridViewTextBoxColumn.ReadOnly = true;
-      this.noteDataGridViewTextBoxColumn.Width = 105;
-      // 
-      // iPAddressDataGridViewTextBoxColumn
-      // 
-      this.iPAddressDataGridViewTextBoxColumn.DataPropertyName = "IPAddress";
-      this.iPAddressDataGridViewTextBoxColumn.HeaderText = "IPAddress";
-      this.iPAddressDataGridViewTextBoxColumn.Name = "iPAddressDataGridViewTextBoxColumn";
-      this.iPAddressDataGridViewTextBoxColumn.ReadOnly = true;
-      // 
-      // webServiceAccessBindingSource
-      // 
-      this.webServiceAccessBindingSource.DataMember = "WebServiceAccess";
-      this.webServiceAccessBindingSource.DataSource = this.hspp1devo3DataSet;
-      // 
-      // hspp1devo3DataSet
-      // 
-      this.hspp1devo3DataSet.DataSetName = "hspp1devo3DataSet";
-      this.hspp1devo3DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
       // groupBox2
       // 
@@ -441,10 +408,6 @@
       this.buttonCreate.UseVisualStyleBackColor = true;
       this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
       // 
-      // webServiceAccessTableAdapter
-      // 
-      this.webServiceAccessTableAdapter.ClearBeforeFill = true;
-      // 
       // buttonDelete
       // 
       this.buttonDelete.Location = new System.Drawing.Point(12, 425);
@@ -474,7 +437,44 @@
       this.buttonReset.UseVisualStyleBackColor = true;
       this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
       // 
-      // Form1
+      // hspp1devo3DataSet1
+      // 
+      this.hspp1devo3DataSet1.DataSetName = "hspp1devo3DataSet1";
+      this.hspp1devo3DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
+      // webServiceAccessBindingSource
+      // 
+      this.webServiceAccessBindingSource.DataMember = "WebServiceAccess";
+      this.webServiceAccessBindingSource.DataSource = this.hspp1devo3DataSet1;
+      // 
+      // webServiceAccessTableAdapter
+      // 
+      this.webServiceAccessTableAdapter.ClearBeforeFill = true;
+      // 
+      // userIdDataGridViewTextBoxColumn
+      // 
+      this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+      this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
+      this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+      this.userIdDataGridViewTextBoxColumn.ReadOnly = true;
+      this.userIdDataGridViewTextBoxColumn.Width = 60;
+      // 
+      // noteDataGridViewTextBoxColumn
+      // 
+      this.noteDataGridViewTextBoxColumn.DataPropertyName = "Note";
+      this.noteDataGridViewTextBoxColumn.HeaderText = "Name";
+      this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+      this.noteDataGridViewTextBoxColumn.ReadOnly = true;
+      this.noteDataGridViewTextBoxColumn.Width = 105;
+      // 
+      // iPAddressDataGridViewTextBoxColumn
+      // 
+      this.iPAddressDataGridViewTextBoxColumn.DataPropertyName = "IPAddress";
+      this.iPAddressDataGridViewTextBoxColumn.HeaderText = "IPAddress";
+      this.iPAddressDataGridViewTextBoxColumn.Name = "iPAddressDataGridViewTextBoxColumn";
+      this.iPAddressDataGridViewTextBoxColumn.ReadOnly = true;
+      // 
+      // Form2
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -486,19 +486,19 @@
       this.Controls.Add(this.buttonLoad);
       this.Controls.Add(this.buttonCreate);
       this.Controls.Add(this.groupBox1);
-      this.Name = "Form1";
+      this.Name = "Form2";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "Form1";
-      this.Load += new System.EventHandler(this.Form1_Load);
+      this.Text = "Form2";
+      this.Load += new System.EventHandler(this.Form2_Load);
       this.groupBox1.ResumeLayout(false);
       this.groupBox4.ResumeLayout(false);
       this.groupBox4.PerformLayout();
       this.groupBox3.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet)).EndInit();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -534,16 +534,16 @@
 		private System.Windows.Forms.CheckBox checkBoxItem;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button buttonLoad;
-		private System.Windows.Forms.Button buttonCreate;
-		private hspp1devo3DataSet hspp1devo3DataSet;
-		private System.Windows.Forms.BindingSource webServiceAccessBindingSource;
-		private hspp1devo3DataSetTableAdapters.WebServiceAccessTableAdapter webServiceAccessTableAdapter;
-		private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-		private System.Windows.Forms.DataGridViewTextBoxColumn iPAddressDataGridViewTextBoxColumn;
+    private System.Windows.Forms.Button buttonCreate;
 		private System.Windows.Forms.Button buttonDelete;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button buttonReset;
+    private System.Windows.Forms.Button buttonReset;
+    private hspp1devo3DataSet1 hspp1devo3DataSet1;
+    private System.Windows.Forms.BindingSource webServiceAccessBindingSource;
+    private hspp1devo3DataSet1TableAdapters.WebServiceAccessTableAdapter webServiceAccessTableAdapter;
+    private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
+    private System.Windows.Forms.DataGridViewTextBoxColumn iPAddressDataGridViewTextBoxColumn;
 	}
 }
 
