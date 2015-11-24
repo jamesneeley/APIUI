@@ -35,3 +35,5 @@ app.config
 hspp1devo3DataSet.xsd
 Properties/Settings.Designer.cs
 Properties/Settings.settings
+obj/x86/Debug/APIUI.Misc.About.resources
+obj/x86/Debug/APIUI.Misc.Splash.resources

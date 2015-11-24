@@ -49,5 +49,10 @@ namespace APIUI
       // Display the new form.
       newMDIChild.Show();
     }
+
+    private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+    {
+      Application.Exit();
+    }
   }
 }
