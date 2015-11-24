@@ -64,19 +64,19 @@
       this.buttonDelete = new System.Windows.Forms.Button();
       this.label5 = new System.Windows.Forms.Label();
       this.buttonReset = new System.Windows.Forms.Button();
-      this.hspp1devo3DataSet1 = new APIUI.hspp1devo3DataSet1();
-      this.webServiceAccessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.webServiceAccessTableAdapter = new APIUI.hspp1devo3DataSet1TableAdapters.WebServiceAccessTableAdapter();
       this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
       this.iPAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+      this.webServiceAccessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.hspp1devo3DataSet1 = new APIUI.hspp1devo3DataSet1();
+      this.webServiceAccessTableAdapter = new APIUI.hspp1devo3DataSet1TableAdapters.WebServiceAccessTableAdapter();
       this.groupBox1.SuspendLayout();
       this.groupBox4.SuspendLayout();
       this.groupBox3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
       this.groupBox2.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).BeginInit();
       this.SuspendLayout();
       // 
       // groupBox1
@@ -437,20 +437,6 @@
       this.buttonReset.UseVisualStyleBackColor = true;
       this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
       // 
-      // hspp1devo3DataSet1
-      // 
-      this.hspp1devo3DataSet1.DataSetName = "hspp1devo3DataSet1";
-      this.hspp1devo3DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
-      // webServiceAccessBindingSource
-      // 
-      this.webServiceAccessBindingSource.DataMember = "WebServiceAccess";
-      this.webServiceAccessBindingSource.DataSource = this.hspp1devo3DataSet1;
-      // 
-      // webServiceAccessTableAdapter
-      // 
-      this.webServiceAccessTableAdapter.ClearBeforeFill = true;
-      // 
       // userIdDataGridViewTextBoxColumn
       // 
       this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
@@ -474,6 +460,20 @@
       this.iPAddressDataGridViewTextBoxColumn.Name = "iPAddressDataGridViewTextBoxColumn";
       this.iPAddressDataGridViewTextBoxColumn.ReadOnly = true;
       // 
+      // webServiceAccessBindingSource
+      // 
+      this.webServiceAccessBindingSource.DataMember = "WebServiceAccess";
+      this.webServiceAccessBindingSource.DataSource = this.hspp1devo3DataSet1;
+      // 
+      // hspp1devo3DataSet1
+      // 
+      this.hspp1devo3DataSet1.DataSetName = "hspp1devo3DataSet1";
+      this.hspp1devo3DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
+      // webServiceAccessTableAdapter
+      // 
+      this.webServiceAccessTableAdapter.ClearBeforeFill = true;
+      // 
       // Form2
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +489,7 @@
       this.Name = "Form2";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Form2";
+      this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
       this.Load += new System.EventHandler(this.Form2_Load);
       this.groupBox1.ResumeLayout(false);
       this.groupBox4.ResumeLayout(false);
@@ -497,8 +498,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.webServiceAccessBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.hspp1devo3DataSet1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
