@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Reflection;
 using System.Threading;
 
 namespace APIUI.Misc
@@ -32,7 +33,7 @@ namespace APIUI.Misc
 
       ////    Version.Text = System.String.Format(Version.Text, My.Application.Info.Version.Major, My.Application.Info.Version.Minor, My.Application.Info.Version.Build, My.Application.Info.Version.Revision)
 
-      Version.Text = string.Format("Version {0}", this.ProductVersion.ToString());
+      this.Version.Text = String.Format("Version {0}", AssemblyVersion);
 
       ////Copyright info
       Copyright.Text = "Horizon Spa & Pool Parts Inc., and its licensors. All rights reserved.";
@@ -100,5 +101,12 @@ namespace APIUI.Misc
       }
     }
 
+    public string AssemblyVersion
+    {
+      get
+      {
+        return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+      }
+    }
   }
 }

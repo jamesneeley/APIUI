@@ -55,7 +55,7 @@ namespace APIUI
 		private void loadUser()
 		{
 			var conn = new SqlConnection(connectionString);
-			var comm = new SqlCommand("SELECT UserId, MethodName, VisibleProperties FROM WebServiceAccess WHERE UserId = '" + label4.Text + "'", conn);
+      var comm = new SqlCommand("SELECT UserId, MethodName, VisibleProperties FROM WebServiceAccess WHERE UserId = '" + label4.Text + "' AND IPAddress='" + textBoxIPAddress.Text + "'", conn);
 			SqlDataReader reader;
 
 			if (!string.IsNullOrEmpty(textBoxUserId.Text))
@@ -66,7 +66,7 @@ namespace APIUI
 					var _with1 = comm;
 					_with1.Connection = conn;
 					_with1.CommandType = CommandType.Text;
-					_with1.CommandText = "SELECT UserId, MethodName FROM WebServiceAccess WHERE UserId = '" + label4.Text + "'";
+          _with1.CommandText = "SELECT UserId, MethodName FROM WebServiceAccess WHERE UserId = '" + label4.Text + "' AND IPAddress='" + textBoxIPAddress.Text + "'";
 					using (reader = _with1.ExecuteReader())
 					{
 						while (reader.Read())
@@ -159,6 +159,13 @@ namespace APIUI
 																					{
 																						checkBoxGetTrackingNumber.Checked = true;
 																					}
+																					else
+																					{
+																						if (reader.GetString(1).Equals("GetTrackingNumberByDate"))
+																						{
+																							checkBoxGetTrackingNumberByDate.Checked = true;
+																						}
+																					}
 																				}
 																			}
 																		}
@@ -211,6 +218,7 @@ namespace APIUI
 			checkBoxGetSalesOrder.Checked = false;
 			checkBoxGetSpecialPricedItems.Checked = false;
 			checkBoxGetTrackingNumber.Checked = false;
+			checkBoxGetTrackingNumberByDate.Checked = false;
 			textBoxUserId.Text = string.Empty;
 			textBoxIPAddress.Text = string.Empty;
 			textBoxNote.Text = string.Empty;
@@ -230,7 +238,7 @@ namespace APIUI
 					{
 						label4.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 						string sql = null;
-						sql = "DELETE FROM WebServiceAccess WHERE UserId='" + label4.Text + "'";
+            sql = "DELETE FROM WebServiceAccess WHERE UserId='" + label4.Text + "' AND IPAddress='" + textBoxIPAddress.Text + "'";
 
 						var conn = new SqlConnection(connectionString);
 						try
@@ -389,6 +397,15 @@ namespace APIUI
 				{
 					conn.Open();
 					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetTrackingNumber', 'all', '" + textBoxNote.Text + "')";
+					var comm = new SqlCommand(sql, conn);
+					comm.ExecuteNonQuery();
+					comm.Dispose();
+					conn.Close();
+				}
+				if (checkBoxGetTrackingNumberByDate.CheckState == CheckState.Checked)
+				{
+					conn.Open();
+					sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetTrackingNumberByDate', 'all', '" + textBoxNote.Text + "')";
 					var comm = new SqlCommand(sql, conn);
 					comm.ExecuteNonQuery();
 					comm.Dispose();
