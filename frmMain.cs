@@ -59,5 +59,11 @@ namespace APIUI
     {
       Application.Exit();
     }
+
+    private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+      var frmAbout = new Misc.About();
+      frmAbout.Show();
+    }
   }
 }

@@ -15,7 +15,7 @@ namespace APIUI
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Misc.Splash());
+			Application.Run(new Misc.Splash());
 		}
 	}
 }

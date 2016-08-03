@@ -162,6 +162,48 @@ namespace APIUI
 																						{
 																							checkBoxGetTrackingNumberByDate.Checked = true;
 																						}
+                                            else
+                                            {
+                                              if (reader.GetString(1).Equals("GetCredits"))
+                                              {
+                                                checkBoxGetCredits.Checked = true;
+                                              }
+                                              else 
+                                              {
+                                                if (reader.GetString(1).Equals("GetInventoryOnHand"))
+                                                {
+                                                  checkBoxGetInventoryOnHand.Checked = true;
+                                                }
+                                                else
+                                                {
+                                                  if (reader.GetString(1).Equals("GetInvoice"))
+                                                  {
+                                                    checkBoxGetInvoice.Checked = true;
+                                                  }
+                                                  else
+                                                  {
+                                                    if (reader.GetString(1).Equals("GetInvoiceDateRange"))
+                                                    {
+                                                      checkBoxGetInvoiceDateRange.Checked = true;
+                                                    }
+                                                    else
+                                                    {
+                                                      if (reader.GetString(1).Equals("GetOrderStatus"))
+                                                      {
+                                                        checkBoxGetOrderStatus.Checked = true;
+                                                      }
+                                                      else
+                                                      {
+                                                        if (reader.GetString(1).Equals("GetInvoiceByPonum"))
+                                                        {
+                                                          checkBoxGetInvoiceByPonum.Checked = true;
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
 																					}
 																				}
 																			}
@@ -216,11 +258,71 @@ namespace APIUI
 			checkBoxGetSpecialPricedItems.Checked = false;
 			checkBoxGetTrackingNumber.Checked = false;
 			checkBoxGetTrackingNumberByDate.Checked = false;
+      checkBoxGetCredits.Checked = false;
+      checkBoxGetInventoryOnHand.Checked = false;
+      checkBoxGetInvoice.Checked = false;
+      checkBoxGetInvoiceByPonum.Checked = false;
+      checkBoxGetInvoiceDateRange.Checked = false;
+      checkBoxGetOrderStatus.Checked = false;
 			textBoxUserId.Text = string.Empty;
 			textBoxIPAddress.Text = string.Empty;
 			textBoxNote.Text = string.Empty;
 			label4.Text = string.Empty;
 		}
+
+    private void chbCheckAll_CheckedChanged(object sender, EventArgs e)
+    {
+      if (chbCheckAll.Checked == true)
+      {
+        checkBoxItem.Checked = true;
+        checkBoxPostOrder.Checked = true;
+        checkBoxGetBomComponents.Checked = true;
+        checkBoxGetBomList.Checked = true;
+        checkBoxGetCommonlyReplacedItems.Checked = true;
+        checkBoxGetDailySales.Checked = true;
+        checkBoxGetImageUrls.Checked = true;
+        checkBoxGetInventoryListChanges.Checked = true;
+        checkBoxGetMasterInventoryList.Checked = true;
+        checkBoxGetMultipleItemDetail.Checked = true;
+        checkBoxGetRealtimeItemStatus.Checked = true;
+        checkBoxGetRecommendedItems.Checked = true;
+        checkBoxGetSalesOrder.Checked = true;
+        checkBoxGetSpecialPricedItems.Checked = true;
+        checkBoxGetTrackingNumber.Checked = true;
+        checkBoxGetTrackingNumberByDate.Checked = true;
+        checkBoxGetCredits.Checked = true;
+        checkBoxGetInventoryOnHand.Checked = true;
+        checkBoxGetInvoice.Checked = true;
+        checkBoxGetInvoiceByPonum.Checked = true;
+        checkBoxGetInvoiceDateRange.Checked = true;
+        checkBoxGetOrderStatus.Checked = true;
+      }
+      else
+      {
+        checkBoxItem.Checked = false;
+        checkBoxPostOrder.Checked = false;
+        checkBoxGetBomComponents.Checked = false;
+        checkBoxGetBomList.Checked = false;
+        checkBoxGetCommonlyReplacedItems.Checked = false;
+        checkBoxGetDailySales.Checked = false;
+        checkBoxGetImageUrls.Checked = false;
+        checkBoxGetInventoryListChanges.Checked = false;
+        checkBoxGetMasterInventoryList.Checked = false;
+        checkBoxGetMultipleItemDetail.Checked = false;
+        checkBoxGetRealtimeItemStatus.Checked = false;
+        checkBoxGetRecommendedItems.Checked = false;
+        checkBoxGetSalesOrder.Checked = false;
+        checkBoxGetSpecialPricedItems.Checked = false;
+        checkBoxGetTrackingNumber.Checked = false;
+        checkBoxGetTrackingNumberByDate.Checked = false;
+        checkBoxGetCredits.Checked = false;
+        checkBoxGetInventoryOnHand.Checked = false;
+        checkBoxGetInvoice.Checked = false;
+        checkBoxGetInvoiceByPonum.Checked = false;
+        checkBoxGetInvoiceDateRange.Checked = false;
+        checkBoxGetOrderStatus.Checked = false;
+      }
+    }
 
 		private void buttonDelete_Click(object sender, EventArgs e)
 		{
@@ -408,6 +510,60 @@ namespace APIUI
 					comm.Dispose();
 					conn.Close();
 				}
+        if (checkBoxGetCredits.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetCredits', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
+        if (checkBoxGetInventoryOnHand.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetInventoryOnHand', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
+        if (checkBoxGetInvoice.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetInvoice', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
+        if (checkBoxGetInvoiceByPonum.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetInvoiceByPonum', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
+        if (checkBoxGetInvoiceDateRange.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetInvoiceDateRange', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
+        if (checkBoxGetOrderStatus.CheckState == CheckState.Checked)
+        {
+          conn.Open();
+          sql = "INSERT INTO WebServiceAccess (UserId, IPAddress, MethodName, VisibleProperties, Note) VALUES ('" + textBoxUserId.Text + "','" + textBoxIPAddress.Text + "', 'GetOrderStatus', 'all', '" + textBoxNote.Text + "')";
+          var comm = new SqlCommand(sql, conn);
+          comm.ExecuteNonQuery();
+          comm.Dispose();
+          conn.Close();
+        }
 				MessageBox.Show(" User Account Created");
 				resetUser();
 				webServiceAccessTableAdapter.Fill(hspp1devo3DataSet.WebServiceAccess);
