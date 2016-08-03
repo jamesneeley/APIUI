@@ -37,3 +37,9 @@ Properties/Settings.Designer.cs
 Properties/Settings.settings
 obj/x86/Debug/APIUI.Misc.About.resources
 obj/x86/Debug/APIUI.Misc.Splash.resources
+bin/x86/Debug/APIUI.vshost.exe
+hspp1devo3DataSet11.Designer.cs
+hspp1devo3DataSet2.Designer.cs
+hspp1devo3DataSetDev.Designer.cs
+obj/x86/Debug/TempPE/hspp1devo3DataSet1.Designer.cs.dll
+obj/x86/Debug/TempPE/hspp1devo3DataSetDev1.Designer.cs.dll
